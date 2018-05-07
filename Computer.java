@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.stream.*;
+import java.util.Arrays;
 
 public class Computer {
     public String name;
@@ -29,6 +31,11 @@ public class Computer {
             this.numbers[bit] = diceNumber;
             bit++;
         }
-    }
 
+        System.out.println("He decided to throw " + chosenRound + " times.");
+        System.out.print("The result of the throw(s): " +  Arrays.toString(threw));
+        
+
+
+    }
 }
