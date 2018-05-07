@@ -21,7 +21,14 @@ public class Computer {
         int sum = IntStream.of(numbers).sum();
         System.out.println(name + "\'s currently score:" + sum);
 
-        int choosenRound = (int )(Math.random() * 3 + 1);
+        int chosenRound = (int )(Math.random() * 3 + 1);
+        int bit = 0;
+        for (int i = 1; i <= chosenRound; i++){
+            int diceNumber = dice();
+            this.threw[bit] = diceNumber;
+            this.numbers[bit] = diceNumber;
+            bit++;
+        }
     }
 
 }
