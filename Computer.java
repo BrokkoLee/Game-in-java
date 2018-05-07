@@ -13,6 +13,10 @@ public class Computer {
         result = result;
     }
 
+    int dice(){
+        return(int )(Math.random() * 6 + 1);
+    }
+
     public void thrown(){
         int sum = IntStream.of(numbers).sum();
         System.out.println(name + "\'s currently score:" + sum);
