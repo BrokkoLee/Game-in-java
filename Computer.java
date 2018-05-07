@@ -11,4 +11,8 @@ public class Computer {
         result = result;
     }
 
+    public void thrown(){
+        
+    }
+
 }
