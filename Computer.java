@@ -34,8 +34,10 @@ public class Computer {
 
         System.out.println("He decided to throw " + chosenRound + " times.");
         System.out.print("The result of the throw(s): " +  Arrays.toString(threw));
-        
 
+        int sum1 = IntStream.of(numbers).sum();
+        System.out.println("Now his score increased to: " + sum1);
+        
 
     }
 }
