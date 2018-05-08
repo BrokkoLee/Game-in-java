@@ -4,7 +4,11 @@ public class Main{
         Computer computerOne = new Computer();
         Computer computerTwo = new Computer();
 
-        computerOne.name = "Computer One";
-        computerTwo.name = "Computer Two";
+        computerOne.name = "Computer_One";
+        computerTwo.name = "Computer_Two";
+
+        Functions.introduction(computerOne, computerTwo, token.bool);
+
+
     }
 }
