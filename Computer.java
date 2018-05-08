@@ -35,9 +35,16 @@ public class Computer {
         System.out.println("He decided to throw " + chosenRound + " times.");
         System.out.print("The result of the throw(s): " +  Arrays.toString(threw));
 
-        int sum1 = IntStream.of(numbers).sum();
-        System.out.println("Now his score increased to: " + sum1);
-        
+        int sumNumbers = IntStream.of(numbers).sum();
+        System.out.println("Now his score increased to: " + sumNumbers);
 
+        if (sumNumbers == 21){
+            result = true;
+            System.out.println(name + "reached 21, Congratulations");
+            System.out.println(name + " won.");
+        } else if (sumNumbers > 21) {
+            System.out.println(name + " reached more than 21");
+            System.out.println(name + " lost, the other player won.");
+        }
     }
 }
