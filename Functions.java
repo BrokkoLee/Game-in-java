@@ -14,7 +14,7 @@ public class Functions {
     public static void draw(int gameRound, Computer player1, Computer player2){
         int numbersSum1 = IntStream.of(player1.numbers).sum();
         int numbersSum2 = IntStream.of(player2.numbers).sum();
-        if (gameRound == 2 && numbersSum1 < 21 && numbersSum2 < 21){
+        if (gameRound == 3 && numbersSum1 < 21 && numbersSum2 < 21){
             if (numbersSum1 > numbersSum2){
                 System.out.println(player1.name + " has just won the game with " + numbersSum1 + " points.");
             } else {
