@@ -4,8 +4,8 @@ import java.util.stream.*;
 
 public class Computer {
     public String name;
-    public int[] numbers;
-    public int[] threw;
+    public int[] numbers = new int[36];
+    public int[] threw = new int[36];
     public boolean result;
 
 
