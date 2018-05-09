@@ -29,11 +29,8 @@ public class Computer {
         System.out.println("He decided to throw " + chosenRound + " times.");
         System.out.print("The result of the throw(s): " +  Arrays.toString(threw));
         threw = new int[9];
-        
-        System.out.println();
-        System.out.println("Now his score increased to: " + Functions.sum(numbers));
-        System.out.println();
 
+        System.out.println("\nNow his score increased to: " + Functions.sum(numbers) + "\n");
 
         if (Functions.sum(numbers) == 21){
             result = true;
