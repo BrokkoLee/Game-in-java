@@ -26,4 +26,7 @@ public class Functions {
     public static int dice(){
         return(int )(Math.random() * 6 + 1);
     }
+
+    public static int sum(int[] Array){
+    }
 }
