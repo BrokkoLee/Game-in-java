@@ -9,7 +9,7 @@ public class Computer {
     public boolean result = false;
 
 
-    public void Computer(String name){
+    public Computer(String name){
         this.name = name;
     }
 
