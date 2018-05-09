@@ -1,5 +1,3 @@
-import java.util.stream.IntStream;
-
 public class Functions {
     public static void introduction(Computer player1, Computer player2, boolean tokenResult){
         System.out.println("The two players are: " + player1.name + " and " + player2.name);
