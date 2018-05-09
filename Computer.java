@@ -9,7 +9,8 @@ public class Computer {
     public boolean result = false;
 
 
-    public void Computer(){
+    public void Computer(String name){
+        this.name = name;
     }
 
 
