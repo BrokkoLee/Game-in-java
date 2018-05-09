@@ -18,10 +18,7 @@ public class Functions {
         }
     }
 
-    public static int dice(){
-        return(int )(Math.random() * 6 + 1);
-    }
-
+    
     public static int sum(int[] Array){
         int result = 0;
         for (int number : Array ){
