@@ -28,5 +28,10 @@ public class Functions {
     }
 
     public static int sum(int[] Array){
+        int result = 0;
+        for (int number : Array ){
+            result += number;
+        }
+        return (result);
     }
 }
