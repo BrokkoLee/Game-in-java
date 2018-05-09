@@ -1,5 +1,6 @@
 public class Main{
     public static void main(String[] args) {
+        Dice dice = new Dice(6);
         Coin token = new Coin();
         Computer computerOne = new Computer("Computer_One");
         Computer computerTwo = new Computer("Computer_Two");
