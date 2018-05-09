@@ -15,8 +15,7 @@ public class Computer {
 
 
     public void thrown(){
-        int sum = IntStream.of(numbers).sum();
-        System.out.println(name + "\'s currently score: " + sum);
+        System.out.println(name + "\'s currently score: " + Functions.sum(numbers));
 
         int chosenRound = (int )(Math.random() * 3 + 1);
         int bit = 0;
@@ -30,17 +29,17 @@ public class Computer {
         System.out.println("He decided to throw " + chosenRound + " times.");
         System.out.print("The result of the throw(s): " +  Arrays.toString(threw));
         threw = new int[9];
-        int sumNumbers = IntStream.of(numbers).sum();
+        
         System.out.println();
-        System.out.println("Now his score increased to: " + sumNumbers);
+        System.out.println("Now his score increased to: " + Functions.sum(numbers));
         System.out.println();
 
 
-        if (sumNumbers == 21){
+        if (Functions.sum(numbers) == 21){
             result = true;
             System.out.println(name + "reached 21, Congratulations");
             System.out.println(name + " won.");
-        } else if (sumNumbers > 21) {
+        } else if (Functions.sum(numbers) > 21) {
             result = true;
             System.out.println(name + " reached more than 21");
             System.out.println(name + " lost, the other player won.");
