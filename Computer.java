@@ -20,9 +20,9 @@ public class Computer {
         int chosenRound = (int )(Math.random() * 3 + 1);
         int bit = 0;
         for (int i = 1; i <= chosenRound; i++){
-            int diceNumber = Functions.dice();
-            this.threw[bit] = diceNumber;
-            this.numbers[bit] = diceNumber;
+            int diceResult = new Dice(6).throwDice();
+            this.threw[bit] = diceResult;
+            this.numbers[bit] = diceResult;
             bit++;
         }
 
