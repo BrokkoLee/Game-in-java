@@ -7,7 +7,7 @@ public class Computer {
     public int[] numbers = new int[9];
     public int[] threw = new int[9];
     public boolean result = false;
-
+    int bit = 0;
 
     public Computer(String name){
         this.name = name;
@@ -18,7 +18,7 @@ public class Computer {
         System.out.println(name + "\'s currently score: " + Functions.sum(numbers));
 
         int chosenRound = (int )(Math.random() * 3 + 1);
-        int bit = 0;
+
         for (int i = 1; i <= chosenRound; i++){
             int diceResult = new Dice(6).throwDice();
             this.threw[bit] = diceResult;
