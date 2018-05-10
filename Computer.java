@@ -1,7 +1,3 @@
-import java.util.Arrays;
-import java.util.stream.*;
-
-
 public class Computer {
     public String name;
     public int[] numbers = new int[9];
@@ -31,7 +27,7 @@ public class Computer {
 
         if (Functions.sum(numbers) == 21){
             result = true;
-            System.out.println(name + "reached 21, Congratulations");
+            System.out.println(name + " reached 21, Congratulations");
             System.out.println(name + " won.");
         } else if (Functions.sum(numbers) > 21) {
             result = true;
