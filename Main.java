@@ -1,10 +1,11 @@
 public class Main{
     public static void main(String[] args) {
         Coin token = new Coin();
-        Computer computerOne = new Computer("Computer_One");
-        Computer computerTwo = new Computer("Computer_Two");
-
-        Functions.introduction(computerOne, computerTwo, token.bool);
+        Computer[] computers = new Computer[]{
+                new Computer("Computer_One"),
+                new Computer("Computer_Two")
+        };
+        Functions.introduction(computers[0], computers[0], token.bool);
 
         for (int game = 1; game <= 3; game++) {
             if (token.bool) {
