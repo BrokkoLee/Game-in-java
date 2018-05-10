@@ -1,7 +1,7 @@
 public class Computer {
     public String name;
     public int[] numbers = new int[9];
-    public boolean result = false;
+    public boolean isWon = false;
     int bit = 0;
 
     public Computer(String name){
@@ -26,11 +26,11 @@ public class Computer {
         System.out.println("\nNow his score increased to: " + Functions.sum(numbers) + "\n");
 
         if (Functions.sum(numbers) == 21){
-            result = true;
+            isWon = true;
             System.out.println(name + " reached 21, Congratulations");
             System.out.println(name + " won.");
         } else if (Functions.sum(numbers) > 21) {
-            result = true;
+            isWon = true;
             System.out.println(name + " reached more than 21");
             System.out.println(name + " lost, the other player won.");
         }
