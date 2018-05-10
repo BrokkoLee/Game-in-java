@@ -16,7 +16,16 @@ public class GameMaster {
         return false;
     }
 
-    public void handleGame(){
+    public void handleGame(boolean coinResult){
+        for(int i = 0; i < numberOfRounds && isGameOver(); i++){
+            if (coinResult){
+                computers[0].thrown();
+                computers[1].thrown();
+            }else{
+                computers[1].thrown();
+                computers[0].thrown();
+            }
+        }
     }
 
 }
