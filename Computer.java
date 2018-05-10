@@ -12,11 +12,11 @@ public class Computer {
     public void thrown(){
         System.out.println(name + "\'s currently score: " + Functions.sum(numbers));
 
-        int chosenRound = (int )(Math.random() * 3 + 1);
-        System.out.println("He decided to throw " + chosenRound + " times.");
+        int numberOfDices = Dice.chooseNumberOfDice();
+        System.out.println("He decided to throw " + numberOfDices + " times.");
         System.out.print("The result of the throw(s): ");
 
-        for (int i = 1; i <= chosenRound; i++){
+        for (int i = 1; i <= numberOfDices; i++){
             int diceResult = new Dice(6).throwDice();
             System.out.print(diceResult + " ");
             this.numbers[bit] = diceResult;
