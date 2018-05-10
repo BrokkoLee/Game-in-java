@@ -6,5 +6,11 @@ public class GameMaster {
         this.computers = computers;
         this.numberOfRounds = numberOfRounds;
     }
-    
+    public boolean isGameOver(){
+        for (Computer computer: computers) {
+            if(computer.isWon){
+                return true;
+            }
+        }
+        return false;
 }
