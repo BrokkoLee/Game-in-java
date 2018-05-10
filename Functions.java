@@ -1,7 +1,7 @@
 public class Functions {
-    public static void introduction(Computer[] computers, int computerArraylength, boolean tokenResult){
+    public static void introduction(Computer[] computers, int computerArrayLength, boolean tokenResult){
         System.out.println("The players are: ");
-        for (int i = 0; i < computerArraylength; i++){
+        for (int i = 0; i < computerArrayLength; i++){
             System.out.print(computers[i].name + " ");
         }
         if (tokenResult) {
