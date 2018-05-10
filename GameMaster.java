@@ -1,4 +1,10 @@
-package PACKAGE_NAME;
-
 public class GameMaster {
+    public Computer[] computers;
+    public int numberOfRounds;
+
+    public GameMaster(Computer[] computers, int numberOfRounds){
+        this.computers = computers;
+        this.numberOfRounds = numberOfRounds;
+    }
+    
 }
