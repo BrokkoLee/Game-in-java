@@ -5,7 +5,6 @@ import java.util.stream.*;
 public class Computer {
     public String name;
     public int[] numbers = new int[9];
-    public int[] threw = new int[9];
     public boolean result = false;
     int bit = 0;
 
@@ -18,17 +17,15 @@ public class Computer {
         System.out.println(name + "\'s currently score: " + Functions.sum(numbers));
 
         int chosenRound = (int )(Math.random() * 3 + 1);
+        System.out.println("He decided to throw " + chosenRound + " times.");
+        System.out.print("The result of the throw(s): ");
 
         for (int i = 1; i <= chosenRound; i++){
             int diceResult = new Dice(6).throwDice();
-            this.threw[bit] = diceResult;
+            System.out.print(diceResult + " ");
             this.numbers[bit] = diceResult;
             bit++;
         }
-
-        System.out.println("He decided to throw " + chosenRound + " times.");
-        System.out.print("The result of the throw(s): " +  Arrays.toString(threw));
-        threw = new int[9];
 
         System.out.println("\nNow his score increased to: " + Functions.sum(numbers) + "\n");
 
