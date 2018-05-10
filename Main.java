@@ -1,14 +1,15 @@
 public class Main{
     public static void main(String[] args) {
-        Coin token = new Coin();
+        boolean coinResult = Coin.throwCoin();
         Computer[] computers = new Computer[]{
                 new Computer("Computer_One"),
                 new Computer("Computer_Two")
         };
-        Functions.introduction(computers, computers.length, token.bool);
+        
+        Functions.introduction(computers, computers.length, coinResult);
 
         for (int game = 1; game <= 3; game++) {
-            if (token.bool) {
+            if (coinResult) {
                 computers[0].thrown();
                 if (computers[0].result || computers[1].result) {
                     break;
