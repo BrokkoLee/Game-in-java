@@ -5,29 +5,29 @@ public class Main{
                 new Computer("Computer_One"),
                 new Computer("Computer_Two")
         };
-        Functions.introduction(computers[0], computers[0], token.bool);
+        Functions.introduction(computers, computers.length, token.bool);
 
         for (int game = 1; game <= 3; game++) {
             if (token.bool) {
-                computerOne.thrown();
-                if (computerOne.result || computerTwo.result) {
+                computers[0].thrown();
+                if (computers[0].result || computers[1].result) {
                     break;
                 }
-                computerTwo.thrown();
-                if (computerOne.result || computerTwo.result) {
+                computers[1].thrown();
+                if (computers[0].result || computers[1].result) {
                     break;
                 }
             } else {
-                computerTwo.thrown();
-                if (computerOne.result || computerTwo.result) {
+                computers[1].thrown();
+                if (computers[0].result || computers[1].result) {
                     break;
                 }
-                computerOne.thrown();
-                if (computerOne.result || computerTwo.result) {
+                computers[0].thrown();
+                if (computers[0].result || computers[1].result) {
                     break;
                 }
             }
-            Functions.draw(game, computerOne, computerTwo);
+            Functions.draw(game, computers[0], computers[1]);
         }
 
     }
