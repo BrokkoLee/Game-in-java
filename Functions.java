@@ -1,10 +1,13 @@
 public class Functions {
-    public static void introduction(Computer player1, Computer player2, boolean tokenResult){
-        System.out.println("The two players are: " + player1.name + " and " + player2.name);
+    public static void introduction(Computer[] computers, int computerArraylength, boolean tokenResult){
+        System.out.println("The players are: ");
+        for (int i = 0; i < computerArraylength; i++){
+            System.out.print(computers[i].name + " ");
+        }
         if (tokenResult) {
-            System.out.println("Based on the coin, " + player1.name + " is starting the round.\n");
+            System.out.println("\nBased on the coin, " + computers[0].name + " is starting the round.\n");
         }else{
-            System.out.println("Based on the coin, " + player2.name + " is starting the round.\n");
+            System.out.println("\nBased on the coin, " + computers[1].name + " is starting the round.\n");
         }
     }
 
