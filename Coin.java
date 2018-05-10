@@ -1,12 +1,10 @@
 public class Coin {
-    boolean bool;
-
-    public Coin(){
+    public boolean throwCoin(){
         int random = (int )(Math.random() * 2) + 1;
         if (random == 1){
-            bool = true;
+            return true;
         } else {
-            bool = false;
+            return false;
         }
     }
 }
