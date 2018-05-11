@@ -17,7 +17,7 @@ public class GameMaster {
     }
 
     public void handleGame(boolean coinResult){
-        for(int i = 0; i < numberOfRounds && isGameOver(); i++){
+        for(int i = 0; i < numberOfRounds && !isGameOver(); i++){  //isGameOver False
             if (coinResult){
                 computers[0].thrown();
                 computers[1].thrown();
