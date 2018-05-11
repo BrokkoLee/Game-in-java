@@ -17,13 +17,15 @@ public class GameMaster {
     }
 
     public void handleGame(boolean coinResult){
-        for(int i = 0; i < numberOfRounds && !isGameOver(); i++){  //isGameOver False
+        for(int i = 0; i < numberOfRounds; i++){
             if (coinResult){
-                computers[0].thrown();
-                computers[1].thrown();
-            }else{
-                computers[1].thrown();
-                computers[0].thrown();
+                for (int j = 0; j < computers.length; j++){     //for each
+                    computers[j].thrown();                      //    |
+                }                                               //    |
+            }else{                                              //    V
+                for (int k = computers.length-1; k >= 0; k--){  //for each?
+                    computers[k].thrown();
+                }
             }
         }
     }
