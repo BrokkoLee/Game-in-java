@@ -21,12 +21,12 @@ public class GameMaster {
         for(int i = 0; i < numberOfRounds; i++){
             if (coinResult){
                 for (int j = 0; j < computers.length; j++){     //for each
-                    computers[j].thrown();
+                    computers[j].PlayRound();
                     if (isGameOver()) {break mainLoop;}
                 }
             }else{
                 for (int k = computers.length-1; k >= 0; k--){  //for each?
-                    computers[k].thrown();
+                    computers[k].PlayRound();
                     if (isGameOver()) {break mainLoop;}
                 }
             }

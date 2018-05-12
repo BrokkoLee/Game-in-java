@@ -9,7 +9,7 @@ public class Computer {
     }
 
 
-    public void thrown(){
+    public void PlayRound(){
         OutputHandler.currentScore(name, numbers);
 
         int numberOfDices = Dice.chooseNumberOfDice();
