@@ -10,4 +10,8 @@ public class OutputHandler {
             System.out.println("\nBased on the coin, " + computers[1].name + " is starting the round.\n");
         }
     }
+
+    public static void currentScore(String name, int[] numbers){
+        System.out.println(name + "\'s currently score: " + Functions.sum(numbers));
+    }
 }
