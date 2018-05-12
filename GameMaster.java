@@ -1,13 +1,13 @@
 public class GameMaster {
-    public Computer[] computers;
-    public int numberOfRounds;
+    private Computer[] computers;
+    private int numberOfRounds;
 
     public GameMaster(Computer[] computers, int numberOfRounds){
         this.computers = computers;
         this.numberOfRounds = numberOfRounds;
     }
 
-    public boolean isGameOver(){
+    private boolean isGameOver(){
         for (Computer computer: computers) {
             if(computer.isWon){
                 return true;
@@ -35,7 +35,7 @@ public class GameMaster {
         }
     }
 
-    public static void draw(int currentRound, int lastRound, Computer[] computers){
+    private static void draw(int currentRound, int lastRound, Computer[] computers){
         if (currentRound == lastRound-1){
             for (Computer computer:computers){
                 int computerScore = Functions.sum(computer.numbers);
