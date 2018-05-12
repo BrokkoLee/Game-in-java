@@ -10,7 +10,7 @@ public class Computer {
 
 
     public void thrown(){
-        System.out.println(name + "\'s currently score: " + Functions.sum(numbers));
+        OutputHandler.currentScore(name, numbers);
 
         int numberOfDices = Dice.chooseNumberOfDice();
         System.out.println("He decided to throw " + numberOfDices + " times.");
