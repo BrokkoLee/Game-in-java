@@ -1,5 +1,4 @@
 public class Functions {
-
     public static int maxPoint(Computer[] computers){
         int max = 0;
         for (Computer computer:computers) {
