@@ -12,15 +12,7 @@ public class Computer {
     public void PlayRound(){
         OutputHandler.currentScore(name, numbers);
 
-        int numberOfDices = Dice.chooseNumberOfDice();
-        System.out.println("He decided to throw " + numberOfDices + " times.");
-        System.out.print("The result of the throw(s): ");
-        for (int i = 1; i <= numberOfDices; i++){
-            int diceResult = new Dice(6).throwDice();
-            System.out.print(diceResult + " ");
-            numbers[bit] = diceResult;
-            bit++;
-        }
+        Dice.playDice(numbers, bit);
 
         OutputHandler.newScore(numbers);
 
