@@ -10,17 +10,14 @@ public class Functions {
             System.out.println("\nBased on the coin, " + computers[1].name + " is starting the round.\n");
         }
     }
+    public static void draw(int currentRound, int lastRound, Computer[] computers){
+        if (currentRound == lastRound){
 
-    public static void draw(int gameRound, Computer player1, Computer player2){
-        if (gameRound == 3 && Functions.sum(player1.numbers) < 21 && Functions.sum(player2.numbers) < 21){
-            if (Functions.sum(player1.numbers) > Functions.sum(player2.numbers)){
-                System.out.println(player1.name + " has just won the game with " + Functions.sum(player1.numbers) + " points.");
-            } else {
-                System.out.println(player2.name + " has just won the game with " + Functions.sum(player2.numbers) + " points.");
-            }
         }
     }
-
+    public static int maxPoint(){
+        return 0;
+    }
     
     public static int sum(int[] Array){
         int result = 0;
