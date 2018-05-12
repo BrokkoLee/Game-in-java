@@ -7,28 +7,24 @@ public class GameMaster {
         this.numberOfRounds = numberOfRounds;
     }
 
-    private static boolean playerWin(Computer[] computers){
+    private static void playerWin(Computer[] computers){
         for (Computer computer : computers) {
             int playerScore = Functions.sum(computer.numbers);
             if (playerScore == 21){
                 computer.isWon = true;
                 System.out.println(computer.name + " has just won the game! Congratulations!");
-                return true;
             }
         }
-        return false;
     }
 
-    private static boolean playerLost(Computer[] computers){
+    private static void playerLost(Computer[] computers){
         for (Computer computer : computers) {
             int playerScore = Functions.sum(computer.numbers);
             if (playerScore > 21){
                 computer.isLost = true;
                 System.out.println(computer.name + " reached more than 21 points.\n The other player won.");
-                return true;
             }
         }
-        return false;
     }
 
     private static void checkPlayerStatus(Computer[] computers){
