@@ -19,7 +19,17 @@ public class GameMaster {
         return false;
     }
 
-    private void playerLost()
+    private boolean playerLost(Computer[] computers){
+        for (Computer computer : computers) {
+            int playerScore = Functions.sum(computer.numbers);
+            if (playerScore > 21){
+                computer.isLost = true;
+                System.out.println(computer.name + " reached more than 21 points.\n The other player won.");
+                return true;
+            }
+        }
+        return false;
+    }
     private boolean isGameOver(){
         for (Computer computer: computers) {
             if(computer.isWon){
