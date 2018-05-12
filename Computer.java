@@ -9,7 +9,6 @@ public class Computer {
         this.name = name;
     }
 
-
     public void PlayRound(){
         OutputHandler.currentScore(name, numbers);
 

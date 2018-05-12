@@ -44,6 +44,17 @@ public class GameMaster {
         return false;
     }
 
+    private static void draw(Computer[] computers){
+        for (Computer computer:computers){
+            int computerScore = Functions.sum(computer.numbers);
+            int highestPoint = Functions.maxPoint(computers);
+            if (computerScore == highestPoint){
+                System.out.println("No one could reach 21 points.\n" + computer.name + " won the game with the highest point (" + highestPoint +")." );
+                break;
+            }
+        }
+    }
+
     public void handleGame(boolean coinResult){
         mainLoop:
         for(int i = 0; i < numberOfRounds; i++){
@@ -61,17 +72,6 @@ public class GameMaster {
         }
         if (!drawBoolean){
             draw(computers);
-        }
-    }
-
-    private static void draw(Computer[] computers){
-        for (Computer computer:computers){
-            int computerScore = Functions.sum(computer.numbers);
-            int highestPoint = Functions.maxPoint(computers);
-            if (computerScore == highestPoint){
-                System.out.println("No one could reach 21 points.\n" + computer.name + " won the game with the highest point (" + highestPoint +")." );
-                break;
-            }
         }
     }
 }

@@ -8,7 +8,6 @@ public class Main{
         };
         GameMaster gameMaster = new GameMaster(computers, rounds);
         OutputHandler.introduction(computers, computers.length, coinResult);
-
         gameMaster.handleGame(coinResult);
     }
 }
