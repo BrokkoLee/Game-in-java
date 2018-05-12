@@ -1,6 +1,7 @@
 public class GameMaster {
     private Computer[] computers;
     private int numberOfRounds;
+    private boolean drawBoolean = false;
 
     public GameMaster(Computer[] computers, int numberOfRounds){
         this.computers = computers;
@@ -36,6 +37,7 @@ public class GameMaster {
         for (Computer computer: computers) {
             checkPlayerStatus(computers);
             if(computer.isWon || computer.isLost){
+                drawBoolean = true;
                 return true;
             }
         }
@@ -56,20 +58,19 @@ public class GameMaster {
                     if (isGameOver()) {break mainLoop;}
                 }
             }
-
-            draw(i, numberOfRounds, computers);
+        }
+        if (!drawBoolean){
+            draw(computers);
         }
     }
 
-    private static void draw(int currentRound, int lastRound, Computer[] computers){
-        if (currentRound == lastRound-1){
-            for (Computer computer:computers){
-                int computerScore = Functions.sum(computer.numbers);
-                int highestPoint = Functions.maxPoint(computers);
-                if (computerScore == highestPoint){
-                    System.out.println("No one could reach 21 points.\n" + computer.name + " won the game with the highest point (" + highestPoint +")." );
-                    break;
-                }
+    private static void draw(Computer[] computers){
+        for (Computer computer:computers){
+            int computerScore = Functions.sum(computer.numbers);
+            int highestPoint = Functions.maxPoint(computers);
+            if (computerScore == highestPoint){
+                System.out.println("No one could reach 21 points.\n" + computer.name + " won the game with the highest point (" + highestPoint +")." );
+                break;
             }
         }
     }
