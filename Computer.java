@@ -23,7 +23,7 @@ public class Computer {
             bit++;
         }
 
-        System.out.println("\nNow his score increased to: " + Functions.sum(numbers) + "\n");
+        OutputHandler.newScore(numbers);
 
         if (Functions.sum(numbers) == 21){
             isWon = true;
