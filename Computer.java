@@ -15,11 +15,10 @@ public class Computer {
         int numberOfDices = Dice.chooseNumberOfDice();
         System.out.println("He decided to throw " + numberOfDices + " times.");
         System.out.print("The result of the throw(s): ");
-
         for (int i = 1; i <= numberOfDices; i++){
             int diceResult = new Dice(6).throwDice();
             System.out.print(diceResult + " ");
-            this.numbers[bit] = diceResult;
+            numbers[bit] = diceResult;
             bit++;
         }
 
