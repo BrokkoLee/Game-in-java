@@ -7,6 +7,16 @@ public class GameMaster {
         this.numberOfRounds = numberOfRounds;
     }
 
+    private void playerWin(Computer[] computers){
+        for (Computer computer : computers) {
+            int playerScore = Functions.sum(computer.numbers);
+            if (playerScore == 21){
+                computer.isWon = true;
+                System.out.println(computer.name + " has just won the game! Congratulations!");
+            }
+        }
+    }
+
     private boolean isGameOver(){
         for (Computer computer: computers) {
             if(computer.isWon){
