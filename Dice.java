@@ -12,4 +12,8 @@ public class Dice {
     public static int chooseNumberOfDice(){
         return ( (int )(Math.random() * 3 + 1) );
     }
+
+    public static void playDice(int[] numbers, int counter){
+
+    }
 }
