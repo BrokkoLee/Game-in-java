@@ -12,7 +12,12 @@ public class Functions {
     }
     public static void draw(int currentRound, int lastRound, Computer[] computers){
         if (currentRound == lastRound){
-
+            for (Computer computer:computers){
+                int computerScore = sum(computer.numbers);
+                if (computerScore == maxPoint(computers)){
+                    System.out.println(computer.name + "won the game");
+                }
+            }
         }
     }
     public static int maxPoint(Computer[] computers){
@@ -23,6 +28,7 @@ public class Functions {
                 max = computerScore;
             }
         }
+        return max;
     }
     
     public static int sum(int[] Array){
