@@ -11,11 +11,13 @@ public class Functions {
         }
     }
     public static void draw(int currentRound, int lastRound, Computer[] computers){
-        if (currentRound == lastRound){
+        if (currentRound == lastRound-1){
             for (Computer computer:computers){
                 int computerScore = sum(computer.numbers);
-                if (computerScore == maxPoint(computers)){
-                    System.out.println(computer.name + "won the game");
+                int highestPoint = maxPoint(computers);
+                if (computerScore == highestPoint){
+                    System.out.println("No one could reach 21 points.\n" + computer.name + " won the game with the highest point (" + highestPoint +")." );
+                    break;
                 }
             }
         }
