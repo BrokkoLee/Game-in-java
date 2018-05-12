@@ -16,15 +16,5 @@ public class Computer {
         Dice.playDice(numbers, bit);
 
         OutputHandler.newScore(numbers);
-
-        if (Functions.sum(numbers) == 21){
-            isWon = true;
-            System.out.println(name + " reached 21, Congratulations");
-            System.out.println(name + " won.");
-        } else if (Functions.sum(numbers) > 21) {
-            isWon = true;
-            System.out.println(name + " reached more than 21");
-            System.out.println(name + " lost, the other player won.");
-        }
     }
 }
