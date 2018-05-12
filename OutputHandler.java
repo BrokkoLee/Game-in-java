@@ -14,4 +14,8 @@ public class OutputHandler {
     public static void currentScore(String name, int[] numbers){
         System.out.println(name + "\'s currently score: " + Functions.sum(numbers));
     }
+
+    public static void newScore(int[] numbers){
+        System.out.println("\nNow his score increased to: " + Functions.sum(numbers) + "\n");
+    }
 }
