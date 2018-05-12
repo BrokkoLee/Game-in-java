@@ -15,8 +15,14 @@ public class Functions {
 
         }
     }
-    public static int maxPoint(){
-        return 0;
+    public static int maxPoint(Computer[] computers){
+        int max = 0;
+        for (Computer computer:computers) {
+            int computerScore = sum(computer.numbers);
+            if (computerScore > max){
+                max = computerScore;
+            }
+        }
     }
     
     public static int sum(int[] Array){
