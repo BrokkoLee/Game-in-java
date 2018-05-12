@@ -31,7 +31,7 @@ public class GameMaster {
                 }
             }
 
-            Functions.draw(i,numberOfRounds-1, computers[0], computers[1]);
+            Functions.draw(i, numberOfRounds, computers);
         }
     }
 
