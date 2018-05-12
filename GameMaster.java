@@ -7,7 +7,7 @@ public class GameMaster {
         this.numberOfRounds = numberOfRounds;
     }
 
-    public static boolean playerWin(Computer[] computers){
+    private static boolean playerWin(Computer[] computers){
         for (Computer computer : computers) {
             int playerScore = Functions.sum(computer.numbers);
             if (playerScore == 21){
@@ -19,7 +19,7 @@ public class GameMaster {
         return false;
     }
 
-    public static boolean playerLost(Computer[] computers){
+    private static boolean playerLost(Computer[] computers){
         for (Computer computer : computers) {
             int playerScore = Functions.sum(computer.numbers);
             if (playerScore > 21){
@@ -31,7 +31,7 @@ public class GameMaster {
         return false;
     }
 
-    public static void checkPlayerStatus(Computer[] computers){
+    private static void checkPlayerStatus(Computer[] computers){
         playerWin(computers);
         playerLost(computers);
     }
