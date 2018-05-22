@@ -14,11 +14,11 @@ public class OutputHandler {
         }
     }
 
-    public static void currentScore(String name, int[] numbers){
+    public static void soutCurrentScore(String name, int[] numbers){
         System.out.println(name + "\'s currently score: " + Functions.sum(numbers));
     }
 
-    public static void newScore(int[] numbers){
+    public static void soutNewScore(int[] numbers){
         System.out.println("\nNow his score increased to: " + Functions.sum(numbers) + "\n");
     }
 }

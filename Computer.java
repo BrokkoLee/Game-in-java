@@ -10,10 +10,10 @@ public class Computer {
     }
 
     public void PlayRound(){
-        OutputHandler.currentScore(name, numbers);
+        OutputHandler.soutCurrentScore(name, numbers);
 
         Dice.playDice(numbers, bit);
 
-        OutputHandler.newScore(numbers);
+        OutputHandler.soutNewScore(numbers);
     }
 }
