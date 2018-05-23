@@ -1,15 +1,15 @@
 public class OutputHandler {
-    public static void introduction(Computer[] computers, int computerArrayLength, boolean tokenResult){
-        showPlayers(computers, computerArrayLength);
+    public static void introduction(Computer[] computers,boolean tokenResult){
+        showPlayers(computers);
         if (tokenResult) {
             System.out.println("\nBased on the coin, " + computers[0].name + " is starting the round.\n");
         }else{
             System.out.println("\nBased on the coin, " + computers[1].name + " is starting the round.\n");
         }
     }
-    private static void showPlayers(Computer[] computers, int computerArrayLength){
+    private static void showPlayers(Computer[] computers){
         System.out.println("The players are: ");
-        for (int i = 0; i < computerArrayLength; i++){
+        for (int i = 0; i < computers.length; i++){
             System.out.print(computers[i].name + " ");
         }
     }

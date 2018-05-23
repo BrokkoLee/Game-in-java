@@ -7,7 +7,7 @@ public class Main{
                 new Computer("Computer_Two")
         };
         GameMaster gameMaster = new GameMaster(computers, rounds);
-        OutputHandler.introduction(computers, computers.length, coinResult);
+        OutputHandler.introduction(computers,coinResult);
         gameMaster.handleGame(coinResult);
     }
 }
