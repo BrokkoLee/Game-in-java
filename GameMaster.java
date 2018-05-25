@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class GameMaster {
     private Computer[] computers;
     private int numberOfRounds;
@@ -6,6 +8,13 @@ public class GameMaster {
     public GameMaster(Computer[] computers, int numberOfRounds){
         this.computers = computers;
         this.numberOfRounds = numberOfRounds;
+    }
+
+    public static Computer inputComputer(){
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter the name of the computer: ");
+        String name = reader.next();
+        return new Computer(name);
     }
 
     private static void playerWin(Computer[] computers){
