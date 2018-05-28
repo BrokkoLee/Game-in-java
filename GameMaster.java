@@ -64,20 +64,11 @@ public class GameMaster {
         }
     }
 
-    public void handleGame(boolean coinResult){
-        mainLoop:
-        for(int i = 0; i < numberOfRounds; i++){
-            if (coinResult){
-                for (int j = 0; j < computers.length; j++){     //for each
-                    computers[j].PlayRound();
-                    if (isGameOver()) {break mainLoop;}
-                }
-            }else{
-                for (int k = computers.length-1; k >= 0; k--){  //for each?
-                    computers[k].PlayRound();
-                    if (isGameOver()) {break mainLoop;}
-                }
-            }
+    public void handleGame(){
+        for (Computer computer : computers) {
+            computer.PlayRound();
+            if (isGameOver())
+                break;
         }
         if (!drawBoolean){
             draw(computers);
