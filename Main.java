@@ -1,6 +1,5 @@
 public class Main{
     public static void main(String[] args) {
-        boolean coinResult = Coin.throwCoin();
         int rounds = 3;
         int maxComputers = 5;
         Computer[] computers = new Computer[maxComputers];
@@ -10,7 +9,7 @@ public class Main{
         }
 
         GameMaster gameMaster = new GameMaster(computers, rounds);
-        OutputHandler.introduction(computers,coinResult);
-        gameMaster.handleGame(coinResult);
+        OutputHandler.introduction(computers);
+        gameMaster.handleGame();
     }
 }

@@ -1,7 +1,7 @@
 public class OutputHandler {
-    public static void introduction(Computer[] computers,boolean tokenResult){
+    public static void introduction(Computer[] computers){
         showPlayers(computers);
-        if (tokenResult) {
+        if (true) {
             System.out.println("\nBased on the coin, " + computers[0].name + " is starting the round.\n");
         }else{
             System.out.println("\nBased on the coin, " + computers[1].name + " is starting the round.\n");
