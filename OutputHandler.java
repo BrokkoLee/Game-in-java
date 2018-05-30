@@ -30,4 +30,20 @@ public class OutputHandler {
         System.out.println("He decided to throw " + numberOfDices + " times.");
     }
 
+    public static void showGetComputers(){
+        System.out.print("Enter the name of the computer: ");
+    }
+
+    public static void showWinner(Computer computer){ //Computer[] ??
+        System.out.println(computer.name + " has just won the game! Congratulations!");
+    }
+
+    public static void showLoser(Computer computer){ //Computer[] ??
+        System.out.println(computer.name + " reached more than 21 points.\n The other player won.");
+
+    }
+
+    public static void showDrawWinner(Computer computer, int highestPoint){
+        System.out.println("No one could reach 21 points.\n" + computer.name + " won the game with the highest point (" + highestPoint +")." );
+    }
 }

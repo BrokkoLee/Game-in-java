@@ -12,7 +12,7 @@ public class GameMaster {
 
     public static Computer inputComputer(){
         Scanner reader = new Scanner(System.in);
-        System.out.print("Enter the name of the computer: ");
+        OutputHandler.showGetComputers();
         String name = reader.next();
         return new Computer(name);
     }
@@ -22,7 +22,7 @@ public class GameMaster {
             int playerScore = Functions.sum(computer.numbers);
             if (playerScore == 21){
                 computer.isWon = true;
-                System.out.println(computer.name + " has just won the game! Congratulations!");
+                OutputHandler.showWinner(computer);
             }
         }
     }
@@ -32,7 +32,7 @@ public class GameMaster {
             int playerScore = Functions.sum(computer.numbers);
             if (playerScore > 21){
                 computer.isLost = true;
-                System.out.println(computer.name + " reached more than 21 points.\n The other player won.");
+                OutputHandler.showLoser(computer);
             }
         }
     }
@@ -58,7 +58,7 @@ public class GameMaster {
             int computerScore = Functions.sum(computer.numbers);
             int highestPoint = Functions.maxPoint(computers);
             if (computerScore == highestPoint){
-                System.out.println("No one could reach 21 points.\n" + computer.name + " won the game with the highest point (" + highestPoint +")." );
+                OutputHandler.showDrawWinner(computer, highestPoint);
                 break;
             }
         }
