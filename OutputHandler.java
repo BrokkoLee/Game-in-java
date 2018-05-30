@@ -21,4 +21,13 @@ public class OutputHandler {
     public static void showNewScore(int[] numbers){
         System.out.println("\nNow his score increased to: " + Functions.sum(numbers) + "\n");
     }
+
+    public static void showThrowResult(){
+        System.out.print("The result of the throw(s): ");
+    }
+
+    public static void showNumberOfThrows(int numberOfDices){
+        System.out.println("He decided to throw " + numberOfDices + " times.");
+    }
+
 }

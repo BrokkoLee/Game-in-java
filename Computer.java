@@ -19,8 +19,8 @@ public class Computer {
 
     public void playDice(int[] numbers){
         int numberOfDices = Dice.chooseNumberOfDice();
-        System.out.println("He decided to throw " + numberOfDices + " times.");
-        System.out.print("The result of the throw(s): ");
+        OutputHandler.showNumberOfThrows(numberOfDices);
+        OutputHandler.showThrowResult();
         for (int i = 1; i <= numberOfDices; i++){
             int diceResult = new Dice(6).throwDice();
             System.out.print(diceResult + " ");
