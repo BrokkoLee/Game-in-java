@@ -10,6 +10,12 @@ public class GameMaster {
         this.numberOfRounds = numberOfRounds;
     }
 
+    public static void inputComputers(Computer[] computers, int maxComputers){
+        for (int i = 0; i < maxComputers; i++) {
+            computers[i] = GameMaster.scanComputer();
+        }
+    }
+
     public static Computer scanComputer(){
         Scanner reader = new Scanner(System.in);
         OutputHandler.showGetComputers();
