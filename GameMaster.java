@@ -12,7 +12,7 @@ public class GameMaster {
 
     public static Computer inputComputer(){
         Scanner reader = new Scanner(System.in);
-        System.out.println("Enter the name of the computer: ");
+        System.out.print("Enter the name of the computer: ");
         String name = reader.next();
         return new Computer(name);
     }
@@ -64,14 +64,17 @@ public class GameMaster {
         }
     }
 
-    public void handleGame(){
-        for (Computer computer : computers) {
-            computer.PlayRound();
-            if (isGameOver())
-                break;
+    public void handleGame(int round){
+        for (int i = 0; i < round; i++) {
+            for (Computer computer : computers) {
+                computer.PlayRound();
+                if (isGameOver())
+                    break;
+            }
+            if (!drawBoolean){
+                draw(computers);
+            }
         }
-        if (!drawBoolean){
-            draw(computers);
-        }
+
     }
 }
