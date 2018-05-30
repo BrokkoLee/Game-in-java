@@ -10,7 +10,7 @@ public class GameMaster {
         this.numberOfRounds = numberOfRounds;
     }
 
-    public static Computer inputComputer(){
+    public static Computer scanComputer(){
         Scanner reader = new Scanner(System.in);
         OutputHandler.showGetComputers();
         String name = reader.next();
