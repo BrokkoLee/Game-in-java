@@ -3,11 +3,12 @@ public class OutputHandler {
         showPlayers(computers);
         showStartingPlayer(computers);
     }
+
     public static void showStartingPlayer(Computer[] computers){
         System.out.println("\nBased on the coin, " + computers[0].name + " is starting the round.\n");
     }
 
-    private static void showPlayers(Computer[] computers){
+    public static void showPlayers(Computer[] computers){
         System.out.println("The players are: ");
         for (int i = 0; i < computers.length; i++){
             System.out.print(computers[i].name + " ");
@@ -45,5 +46,9 @@ public class OutputHandler {
 
     public static void showDrawWinner(Computer computer, int highestPoint){
         System.out.println("No one could reach 21 points.\n" + computer.name + " won the game with the highest point (" + highestPoint +")." );
+    }
+
+    public static void showDiceResult(int diceResult){
+        System.out.print(diceResult + " ");
     }
 }

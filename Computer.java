@@ -23,7 +23,7 @@ public class Computer {
         OutputHandler.showThrowResult();
         for (int i = 1; i <= numberOfDices; i++){
             int diceResult = new Dice(6).throwDice();
-            System.out.print(diceResult + " ");
+            OutputHandler.showDiceResult(diceResult);
             numbers[bit] = diceResult;
             bit++;
         }
