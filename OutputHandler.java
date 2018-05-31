@@ -5,7 +5,7 @@ public class OutputHandler {
     }
 
     public static void showStartingPlayer(Computer[] computers){
-        System.out.println("\nBased on the coin, " + computers[0].name + " is starting the round.\n");
+        System.out.println("\nBased on the shuffle, " + computers[0].name + " is starting the round.\n");
     }
 
     public static void showPlayers(Computer[] computers){
@@ -39,8 +39,8 @@ public class OutputHandler {
         System.out.println(computer.name + " has just won the game! Congratulations!");
     }
 
-    public static void showLoser(Computer computer){ //Computer[] ??
-        System.out.println(computer.name + " reached more than 21 points.\n The other player won.");
+    public static void showLoser(Computer computer){
+        System.out.println(computer.name + " reached more than 21 points.\n" + computer.name + " was eliminated from the game.\n");
 
     }
 
