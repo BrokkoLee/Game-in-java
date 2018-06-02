@@ -53,4 +53,8 @@ public class OutputHandler {
     public static void showDiceResult(int diceResult){
         System.out.print(diceResult + " ");
     }
+
+    public static void showCurrentRound(int currentRound){
+        System.out.println("Round: " + currentRound);
+    }
 }
