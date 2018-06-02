@@ -1,17 +1,19 @@
+import java.util.ArrayList;
+
 public class OutputHandler {
-    public static void introduction(Computer[] computers){
+    public static void introduction(ArrayList<Computer> computers){
         showPlayers(computers);
         showStartingPlayer(computers);
     }
 
-    public static void showStartingPlayer(Computer[] computers){
-        System.out.println("\nBased on the shuffle, " + computers[0].name + " is starting the round.\n");
+    public static void showStartingPlayer(ArrayList<Computer> computers){
+        System.out.println("\nBased on the shuffle, " + computers.get(0).name + " is starting the round.\n");
     }
 
-    public static void showPlayers(Computer[] computers){
+    public static void showPlayers(ArrayList<Computer> computers){
         System.out.println("The players are: ");
-        for (int i = 0; i < computers.length; i++){
-            System.out.print(computers[i].name + " ");
+        for (Computer computer : computers) {
+            System.out.print(computer.name + " ");
         }
     }
 

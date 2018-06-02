@@ -1,18 +1,19 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameMaster {
-    private Computer[] computers;
+    private ArrayList<Computer> computers;
     private int numberOfRounds;
     private boolean drawBoolean = false;
 
-    public GameMaster(Computer[] computers, int numberOfRounds){
+    public GameMaster(ArrayList computers, int numberOfRounds){
         this.computers = computers;
         this.numberOfRounds = numberOfRounds;
     }
 
-    public static void inputComputers(Computer[] computers, int maxComputers){
+    public static void inputComputers(ArrayList<Computer> computers, int maxComputers){
         for (int i = 0; i < maxComputers; i++) {
-            computers[i] = GameMaster.scanComputer();
+            computers.add(GameMaster.scanComputer());
         }
     }
 
@@ -23,7 +24,7 @@ public class GameMaster {
         return new Computer(name);
     }
 
-    private static void playerWin(Computer[] computers){
+    private static void playerWin(ArrayList<Computer> computers){
         for (Computer computer : computers) {
             int playerScore = Functions.sum(computer.numbers);
             if (playerScore == 21){
@@ -33,7 +34,7 @@ public class GameMaster {
         }
     }
 
-    private static void playerLost(Computer[] computers){
+    private static void playerLost(ArrayList<Computer> computers){
         for (Computer computer : computers) {
             int playerScore = Functions.sum(computer.numbers);
             if (playerScore > 21){
@@ -43,7 +44,7 @@ public class GameMaster {
         }
     }
 
-    private static void checkPlayerStatus(Computer[] computers){
+    private static void checkPlayerStatus(ArrayList<Computer> computers){
         playerWin(computers);
         playerLost(computers);
     }
@@ -59,10 +60,12 @@ public class GameMaster {
         return false;
     }
 
-    private static void draw(Computer[] computers){
+    private static void draw(ArrayList<Computer> computers){
         for (Computer computer:computers){
-            int computerScore = Functions.sum(computer.numbers);
-            int highestPoint = Functions.maxPoint(computers);
+            int computerScore;                           //split ??
+            computerScore = Functions.sum(computer.numbers);
+            int highestPoint;                            //split
+            highestPoint = Functions.maxPoint(computers);
             if (computerScore == highestPoint){
                 OutputHandler.showDrawWinner(computer, highestPoint);
                 break;

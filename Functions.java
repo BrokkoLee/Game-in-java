@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public class Functions {
-    public static int maxPoint(Computer[] computers){
+    public static int maxPoint(ArrayList<Computer> computers){
         int max = 0;
         for (Computer computer:computers) {
             int computerScore = sum(computer.numbers);
