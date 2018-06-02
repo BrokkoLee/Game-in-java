@@ -1,8 +1,10 @@
+import java.util.ArrayList;
+
 public class Main{
     public static void main(String[] args) {
         int rounds = 3;
-        int maxComputers = 2;
-        Computer[] computers = new Computer[maxComputers];
+        int maxComputers = 5;
+        ArrayList<Computer> computers = new ArrayList<>();
 
         GameMaster.inputComputers(computers, maxComputers);
 
