@@ -17,11 +17,11 @@ public class OutputHandler {
         }
     }
 
-    public static void showCurrentScore(String name, int[] numbers){
+    public static void showCurrentScore(String name, ArrayList<Integer> numbers){
         System.out.println(name + "\'s currently score: " + Functions.sum(numbers));
     }
 
-    public static void showNewScore(int[] numbers){
+    public static void showNewScore(ArrayList<Integer> numbers){
         System.out.println("\nNow his score increased to: " + Functions.sum(numbers) + "\n");
     }
 

@@ -11,7 +11,7 @@ public class Functions {
         }
         return max;
     }
-    public static int sum(int[] Array){
+    public static int sum(ArrayList<Integer> Array){
         int result = 0;
         for (int number : Array ){
             result += number;

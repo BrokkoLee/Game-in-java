@@ -1,6 +1,8 @@
+import java.util.ArrayList;
+
 public class Computer {
     public String name;
-    public int[] numbers = new int[9];
+    public ArrayList<Integer> numbers = new ArrayList<>();
     public boolean isWon = false;
     public boolean isLost = false;
     int bit = 0;
@@ -19,15 +21,14 @@ public class Computer {
         OutputHandler.showNewScore(numbers);
     }
 
-    public void playDice(int[] numbers){
+    public void playDice(ArrayList<Integer> numbers){
         int numberOfDices = Dice.chooseNumberOfDice();
         OutputHandler.showNumberOfThrows(numberOfDices);
         OutputHandler.showThrowResult();
         for (int i = 1; i <= numberOfDices; i++){
             int diceResult = new Dice(6).throwDice();
             OutputHandler.showDiceResult(diceResult);
-            numbers[bit] = diceResult;
-            bit++;
+            numbers.add(diceResult);
         }
     }
 }
