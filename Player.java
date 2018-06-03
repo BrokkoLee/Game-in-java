@@ -10,22 +10,31 @@ public class Player {
         this.name = name;
     }
 
+    public static int chooseNumberOfDice(){
+        return ( (int )(Math.random() * 3 + 1) );
+    }
+
+    public int throwDice(int sides){
+        return ( (int)(Math.random() * sides + 1) );
+    }
+
     public void PlayRound(int round){
         OutputHandler.showCurrentRound(round);
 
         OutputHandler.showCurrentScore(name, numbers);
 
-        playDice(numbers);
+        playDice();
 
         OutputHandler.showNewScore(numbers);
     }
 
-    public void playDice(ArrayList<Integer> numbers){
-        int numberOfDices = Dice.chooseNumberOfDice();
+    public void playDice(){
+        int numberOfDices = chooseNumberOfDice();
         OutputHandler.showNumberOfThrows(numberOfDices);
         OutputHandler.showThrowResult();
+        Dice dice = new Dice(6);
         for (int i = 1; i <= numberOfDices; i++){
-            int diceResult = new Dice(6).throwDice();
+            int diceResult = throwDice(dice.sides);
             OutputHandler.showDiceResult(diceResult);
             numbers.add(diceResult);
         }
