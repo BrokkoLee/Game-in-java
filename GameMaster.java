@@ -42,7 +42,7 @@ public class GameMaster {
         }
     }
 
-    private void checkPlayerStatus(ArrayList<Computer> computers, Computer computer){
+    private void checkPlayerStatus(Computer computer){
         playerWin(computer);
         playerLost(computer);
     }
@@ -59,6 +59,9 @@ public class GameMaster {
             int highestPoint = Functions.maxPoint(computers);
             if (computerScore == highestPoint){
                 OutputHandler.showDrawWinner(computer, highestPoint);
+                break;
+            }else{
+                OutputHandler.showZeroPlayersLeft();
                 break;
             }
         }

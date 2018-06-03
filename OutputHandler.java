@@ -57,4 +57,8 @@ public class OutputHandler {
     public static void showCurrentRound(int currentRound){
         System.out.println("Round: " + currentRound);
     }
+
+    public static void showZeroPlayersLeft(){
+        System.out.println("There is zero players left in the game. \n No one won.");
+    }
 }
