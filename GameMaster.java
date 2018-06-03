@@ -29,9 +29,7 @@ public class GameMaster {
         if (playerScore == 21){
             computer.isWon = true;
             drawBoolean = false;
-            for (Computer computer1 : computers) {
-                   computer1.isLost = true;
-            }
+            setAllisLostToFalse();
             OutputHandler.showWinner(computer);
         }
     }
@@ -47,6 +45,12 @@ public class GameMaster {
     private void checkPlayerStatus(ArrayList<Computer> computers, Computer computer){
         playerWin(computers, computer);
         playerLost(computer);
+    }
+
+    private void setAllisLostToFalse(){
+        for (Computer computer1 : computers) {
+            computer1.isLost = true;
+        }
     }
 
     private static void draw(ArrayList<Computer> computers){
