@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class GameMaster {
     private ArrayList<Computer> computers;
     private int numberOfRounds;
-    private boolean drawBoolean = false;
+    private boolean drawBoolean = true;
 
     public GameMaster(ArrayList computers, int numberOfRounds){
         this.computers = computers;
@@ -24,49 +24,35 @@ public class GameMaster {
         return new Computer(name);
     }
 
-    private static void playerWin(ArrayList<Computer> computers){
-        for (Computer computer : computers) {
-            int playerScore = Functions.sum(computer.numbers);
-            if (playerScore == 21){
-                computer.isWon = true;
-                OutputHandler.showWinner(computer);
+    private void playerWin(ArrayList<Computer> computers, Computer computer){
+        int playerScore = Functions.sum(computer.numbers);
+        if (playerScore == 21){
+            computer.isWon = true;
+            drawBoolean = false;
+            for (Computer computer1 : computers) {
+                   computer1.isLost = true;
             }
+            OutputHandler.showWinner(computer);
         }
     }
 
-    private static void playerLost(ArrayList<Computer> computers){
-        for (Computer computer : computers) {
-            int playerScore = Functions.sum(computer.numbers);
-            if (playerScore > 21){
-                computer.isLost = true;
-                //computers.remove(computer);
-                OutputHandler.showLoser(computer);
-            }
+    private static void playerLost(Computer computer){
+        int playerScore = Functions.sum(computer.numbers);
+        if (playerScore > 21){
+            computer.isLost = true;
+            OutputHandler.showLoser(computer);
         }
     }
 
-    private static void checkPlayerStatus(ArrayList<Computer> computers){
-        playerWin(computers);
-        playerLost(computers);
-    }
-
-    private boolean isGameOver(){
-        for (Computer computer: computers) {
-            checkPlayerStatus(computers);
-            if(computer.isWon || computer.isLost){
-                drawBoolean = true;
-                return true;
-            }
-        }
-        return false;
+    private void checkPlayerStatus(ArrayList<Computer> computers, Computer computer){
+        playerWin(computers, computer);
+        playerLost(computer);
     }
 
     private static void draw(ArrayList<Computer> computers){
         for (Computer computer:computers){
-            int computerScore;                           //split ??
-            computerScore = Functions.sum(computer.numbers);
-            int highestPoint;                            //split
-            highestPoint = Functions.maxPoint(computers);
+            int computerScore = Functions.sum(computer.numbers);
+            int highestPoint = Functions.maxPoint(computers);
             if (computerScore == highestPoint){
                 OutputHandler.showDrawWinner(computer, highestPoint);
                 break;
@@ -77,15 +63,16 @@ public class GameMaster {
     public void handleGame(int round) {
         for (int i = 0; i < round; i++) {
             OutputHandler.showCurrentRound(i+1);
-            for (Computer computer : computers) {
-                computer.PlayRound();
-                if (isGameOver())
-                    break;
+            if (computers.size() > 0) {
+                for (Computer computer : computers) {
+                    if (computer.isLost)
+                        continue;
+                    computer.PlayRound();
+                    checkPlayerStatus(computers, computer);
+                }
             }
         }
-        if (!drawBoolean) {
+        if (drawBoolean)
             draw(computers);
-        }
     }
-
 }
