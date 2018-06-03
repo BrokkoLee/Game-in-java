@@ -5,7 +5,7 @@ public class Functions {
         int max = 0;
         for (Computer computer:computers) {
             int computerScore = sum(computer.numbers);
-            if (computerScore > max){
+            if (computerScore > max && computerScore < 21){
                 max = computerScore;
             }
         }
