@@ -69,8 +69,8 @@ public class GameMaster {
 
     }
 
-    public void handleGame(int round) {
-        for (int i = 0; i < round; i++) {
+    public void handleRounds() {
+        for (int i = 0; i < numberOfRounds; i++) {
             for (Computer computer : computers) {
                 if (computer.isLost)
                     continue;
@@ -80,5 +80,10 @@ public class GameMaster {
         }
         if (drawBoolean)
             draw(computers);
+    }
+
+    public void playGame(ArrayList<Computer> computers){
+        OutputHandler.introduction(computers);
+        handleRounds();
     }
 }
