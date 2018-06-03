@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class Functions {
-    public static int maxPoint(ArrayList<Computer> computers){
+    public static int maxPoint(ArrayList<Player> players){
         int max = 0;
-        for (Computer computer:computers) {
-            int computerScore = sum(computer.numbers);
+        for (Player player : players) {
+            int computerScore = sum(player.numbers);
             if (computerScore > max && computerScore < 21){
                 max = computerScore;
             }

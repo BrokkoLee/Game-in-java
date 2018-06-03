@@ -4,12 +4,13 @@ public class Main{
     public static void main(String[] args) {
         int rounds = 5;
         int maxComputers = 3;
-        ArrayList<Computer> computers = new ArrayList<>();
 
-        GameMaster.inputComputers(computers, maxComputers);
+        ArrayList<Player> players = new ArrayList<>();
 
-        GameMaster gameMaster = new GameMaster(computers, rounds);
+        GameMaster.inputComputers(players, maxComputers);
 
-        gameMaster.playGame(computers);
+        GameMaster gameMaster = new GameMaster(players, rounds);
+
+        gameMaster.playGame(players);
     }
 }
