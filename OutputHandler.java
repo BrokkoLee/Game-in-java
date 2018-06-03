@@ -63,6 +63,6 @@ public class OutputHandler {
     }
 
     public static void showScanInNumberOfDices(){
-        System.out.println("Enter how many dices do you want to throw: ");
+        System.out.print("Enter how many dices do you want to throw: ");
     }
 }
