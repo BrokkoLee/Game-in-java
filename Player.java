@@ -9,8 +9,7 @@ public class Player {
     public Player(String name){
         this.name = name;
     }
-
-    public static int chooseNumberOfDice(){
+    public int chooseNumberOfDice(){
         return ( (int )(Math.random() * 3 + 1) );
     }
 
