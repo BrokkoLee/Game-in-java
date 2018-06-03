@@ -7,6 +7,8 @@ public class Main{
 
         ArrayList<Player> players = new ArrayList<>();
 
+        players.add(new Human("Joe"));
+
         GameMaster.inputComputers(players, maxComputers);
 
         GameMaster gameMaster = new GameMaster(players, rounds);
