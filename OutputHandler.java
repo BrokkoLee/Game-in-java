@@ -61,4 +61,8 @@ public class OutputHandler {
     public static void showZeroPlayersLeft(){
         System.out.println("There is zero players left in the game. \n No one won.");
     }
+
+    public static void showScanInNumberOfDices(){
+        System.out.println("Enter how many dices do you want to throw: ");
+    }
 }
