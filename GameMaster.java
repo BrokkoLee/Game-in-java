@@ -54,17 +54,19 @@ public class GameMaster {
     }
 
     private static void draw(ArrayList<Computer> computers){
+        boolean zeroPlayer = true;
         for (Computer computer:computers){
             int computerScore = Functions.sum(computer.numbers);
             int highestPoint = Functions.maxPoint(computers);
             if (computerScore == highestPoint){
+                zeroPlayer = false;
                 OutputHandler.showDrawWinner(computer, highestPoint);
-                break;
-            }else{
-                OutputHandler.showZeroPlayersLeft();
                 break;
             }
         }
+        if (zeroPlayer)
+            OutputHandler.showZeroPlayersLeft();
+
     }
 
     public void handleGame(int round) {
@@ -74,7 +76,7 @@ public class GameMaster {
                 if (computer.isLost)
                     continue;
                 computer.PlayRound();
-                checkPlayerStatus(computers, computer);
+                checkPlayerStatus(computer);
             }
         }
         if (drawBoolean)
