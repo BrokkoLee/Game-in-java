@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class GameMaster {
@@ -83,6 +85,7 @@ public class GameMaster {
     }
 
     public void playGame(ArrayList<Computer> computers){
+        Collections.shuffle(computers);
         OutputHandler.introduction(computers);
         handleRounds();
     }
