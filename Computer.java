@@ -9,7 +9,9 @@ public class Computer {
         this.name = name;
     }
 
-    public void PlayRound(){
+    public void PlayRound(int round){
+        OutputHandler.showCurrentRound(round);
+
         OutputHandler.showCurrentScore(name, numbers);
 
         playDice(numbers);

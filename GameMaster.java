@@ -71,11 +71,10 @@ public class GameMaster {
 
     public void handleGame(int round) {
         for (int i = 0; i < round; i++) {
-            OutputHandler.showCurrentRound(i+1);
             for (Computer computer : computers) {
                 if (computer.isLost)
                     continue;
-                computer.PlayRound();
+                computer.PlayRound(i+1);
                 checkPlayerStatus(computer);
             }
         }
