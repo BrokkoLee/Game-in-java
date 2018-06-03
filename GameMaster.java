@@ -24,7 +24,7 @@ public class GameMaster {
         return new Computer(name);
     }
 
-    private void playerWin(ArrayList<Computer> computers, Computer computer){
+    private void playerWin(Computer computer){
         int playerScore = Functions.sum(computer.numbers);
         if (playerScore == 21){
             computer.isWon = true;
@@ -43,13 +43,13 @@ public class GameMaster {
     }
 
     private void checkPlayerStatus(ArrayList<Computer> computers, Computer computer){
-        playerWin(computers, computer);
+        playerWin(computer);
         playerLost(computer);
     }
 
     private void setAllisLostToFalse(){
-        for (Computer computer1 : computers) {
-            computer1.isLost = true;
+        for (Computer computer : computers) {
+            computer.isLost = true;
         }
     }
 
@@ -67,13 +67,11 @@ public class GameMaster {
     public void handleGame(int round) {
         for (int i = 0; i < round; i++) {
             OutputHandler.showCurrentRound(i+1);
-            if (computers.size() > 0) {
-                for (Computer computer : computers) {
-                    if (computer.isLost)
-                        continue;
-                    computer.PlayRound();
-                    checkPlayerStatus(computers, computer);
-                }
+            for (Computer computer : computers) {
+                if (computer.isLost)
+                    continue;
+                computer.PlayRound();
+                checkPlayerStatus(computers, computer);
             }
         }
         if (drawBoolean)
