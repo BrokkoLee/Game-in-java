@@ -83,7 +83,7 @@ public class GameMaster {
             draw(players);
     }
 
-    public void playGame(ArrayList<Player> players){
+    public void playGame(){
         Collections.shuffle(players);
         OutputHandler.introduction(players);
         handleRounds();

@@ -13,6 +13,6 @@ public class Main{
 
         GameMaster gameMaster = new GameMaster(players, rounds);
 
-        gameMaster.playGame(players);
+        gameMaster.playGame();
     }
 }
