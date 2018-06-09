@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Player {
+public abstract class Player {
     public String name;
     public ArrayList<Integer> numbers = new ArrayList<>();
     public boolean isWon = false;
