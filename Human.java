@@ -4,6 +4,7 @@ public class Human extends Player{
     public Human(String name) {
         super(name);
     }
+
     @Override
     public int chooseNumberOfDice(){
         Scanner reader = new Scanner(System.in);

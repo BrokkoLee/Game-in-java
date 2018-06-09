@@ -9,9 +9,8 @@ public abstract class Player {
     public Player(String name){
         this.name = name;
     }
-    public int chooseNumberOfDice(){
-        return ( (int )(Math.random() * 3 + 1) );
-    }
+
+    public abstract int chooseNumberOfDice();
 
     public int throwDice(int sides){
         return ( (int)(Math.random() * sides + 1) );
