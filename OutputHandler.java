@@ -37,7 +37,7 @@ public class OutputHandler {
         System.out.print("Enter the name of the computer: ");
     }
 
-    public static void showWinner(Player player){ //Computer[] ??
+    public static void showWinner(Player player){
         System.out.println(player.name + " has just won the game! Congratulations!");
     }
 

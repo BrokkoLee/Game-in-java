@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Scanner;
 
 public class GameMaster {
     private ArrayList<Player> players;
@@ -12,17 +11,11 @@ public class GameMaster {
         this.numberOfRounds = numberOfRounds;
     }
 
-    public static void inputComputers(ArrayList<Player> computers, int maxComputers){
+    public static void inputPlayer(ArrayList<Player> players, int maxComputers){
         for (int i = 0; i < maxComputers; i++) {
-            computers.add(GameMaster.scanComputer());
+            players.add(Human.scanHuman());
+            players.add(Computer.scanComputer());
         }
-    }
-
-    public static Computer scanComputer(){
-        Scanner reader = new Scanner(System.in);
-        OutputHandler.showGetComputers();
-        String name = reader.next();
-        return new Computer(name);
     }
 
     private void playerWin(Player player){
