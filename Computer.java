@@ -10,6 +10,7 @@ public class Computer extends Player {
         return ( (int )(Math.random() * 3 + 1) );
     }
 
+    //TODO scan computer names from file
     public static Computer scanComputer(){
         Scanner reader = new Scanner(System.in);
         OutputHandler.showGetComputers();
