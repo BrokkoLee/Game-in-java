@@ -15,7 +15,7 @@ public class Human extends Player {
 
     public static Human scanHuman(){
         Scanner reader = new Scanner(System.in);
-        OutputHandler.showGetComputers();
+        OutputHandler.showGetPlayers();
         String name = reader.next();
         return new Human(name);
     }

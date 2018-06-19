@@ -11,11 +11,15 @@ public class GameMaster {
         this.numberOfRounds = numberOfRounds;
     }
 
-    public static void inputPlayer(ArrayList<Player> players, int maxComputers){
-        for (int i = 0; i < maxComputers; i++) {
-            players.add(Human.scanHuman());
+    public static void inputPlayers(ArrayList<Player> players, int computerPlayers, int humanPlayers){
+        for (int i = 0; i < computerPlayers; i++) {
             players.add(Computer.scanComputer());
         }
+
+        for (int i = 0; i < humanPlayers; i++) {
+            players.add(Human.scanHuman());
+        }
+
     }
 
     private void playerWin(Player player){
