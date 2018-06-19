@@ -67,7 +67,7 @@ public class GameMaster {
 
     }
 
-    public void handleRounds() {
+    private void handleRounds() {
         for (int i = 0; i < numberOfRounds; i++) {
             for (Player player : players) {
                 if (player.isLost)
