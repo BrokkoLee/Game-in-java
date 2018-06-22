@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Functions {
+public class ListOperations {
     public static int maxPoint(ArrayList<Player> players){
         int max = 0;
         for (Player player : players) {
