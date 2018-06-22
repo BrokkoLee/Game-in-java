@@ -5,6 +5,7 @@ public class GameMaster {
     private ArrayList<Player> players;
     private int numberOfRounds;
     private boolean drawBoolean = true;
+    private final int goalPoint = 21;
 
     public GameMaster(ArrayList players, int numberOfRounds){
         this.players = players;
@@ -23,8 +24,8 @@ public class GameMaster {
     }
 
     private void playerWin(Player player){
-        int playerScore = Functions.sum(player.numbers);
-        if (playerScore == 21){
+        int playerScore = ListOperations.sum(player.numbers);
+        if (playerScore == goalPoint){
             player.isWon = true;
             drawBoolean = false;
             setAllisLostToFalse();
@@ -33,7 +34,7 @@ public class GameMaster {
     }
 
     private static void playerLost(Player player){
-        int playerScore = Functions.sum(player.numbers);
+        int playerScore = ListOperations.sum(player.numbers);
         if (playerScore > 21){
             player.isLost = true;
             OutputHandler.showLoser(player);
@@ -54,8 +55,8 @@ public class GameMaster {
     private static void draw(ArrayList<Player> players){
         boolean zeroPlayer = true;
         for (Player player : players){
-            int computerScore = Functions.sum(player.numbers);
-            int highestPoint = Functions.maxPoint(players);
+            int computerScore = ListOperations.sum(player.numbers);
+            int highestPoint = ListOperations.maxPoint(players);
             if (computerScore == highestPoint){
                 zeroPlayer = false;
                 OutputHandler.showDrawWinner(player, highestPoint);
